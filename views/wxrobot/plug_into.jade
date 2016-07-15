@@ -1,0 +1,56 @@
+extends ../layout_inspinia
+
+block links
+    link(href='/assets/bootstrap/bootstrap.fix.css#1.0.0', rel='stylesheet')
+
+block content
+    .row
+        .col-lg-12
+            .ibox.float-e-margins
+                .ibox-title
+                    h5
+                        | #{title} &nbsp;&nbsp;
+                        small 托管一个新的微信号
+                    .ibox-tools
+                        a.collapse-link
+                            i.fa.fa-chevron-up
+                .ibox-content
+                    .row
+                        .col-sm-8.b-r
+                            h3.m-t-none.m-b Plug Into WeChat
+                            p Plug Into today for more expirience.
+                            form(role='form')
+                                .form-group
+                                    label WeChat
+                                    input.form-control(type='text', name='wx', placeholder='WeChat number')
+                                div
+                                    button#pluginto.btn.btn-sm.btn-primary.pull-right.m-t-n-xs(type='button', data-pluginto-text='正在托管...')
+                                        strong 托管
+                                    button#cancel.btn.btn-sm.btn-danger.pull-left.m-t-n-xs(type='button')
+                                        strong 取消
+                        .col-sm-4
+                            h4 Wanna a new WeChat number?
+                            p You can create an WeChat:
+                            p.text-center(style='margin-top:40px;')
+                                a.btn.btn-default(href='https://weixin.qq.com/', target='_blank')
+                                    i.fa.fa-wechat
+                                    | &nbsp;&nbsp;立即申请
+
+    .modal#qrcode.fade.bs-example-modal-sm(tabindex='-1', role='dialog', data-backdrop='static')
+        .modal-dialog.modal-sm
+            .modal-content
+                .modal-header
+                    h4#myModalLabel.modal-title 扫描二维码
+                .modal-body
+                    .qrcode.text-center
+                .modal-footer
+                    | 使用手机WeChat扫描二维码确认平台进行托管。
+                    br
+                    small 扫描后不要立刻点击“登录”，请等待平台提示信息
+
+block actions
+
+
+block scripts
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/wxrobot-pluginto.js#1.0.0')

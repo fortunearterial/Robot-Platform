@@ -1,0 +1,77 @@
+extends ../layout_inspinia
+
+mixin row(faq)
+    tr(data-id='#{faq.id}')
+        td #{faq.question}
+        td #{faq.keyword}
+        td !{faq.answer}
+        td #{faq.questioner}
+        td #{faq.answerer}
+        td #{faq.recorder}
+        td #{faq.createdAt}
+        td #{faq.updatedAt}
+        td
+            a.edit(href='/robot/faq/edit/#{faq.id}', data-toggle='modal', data-target='#modal' )
+                i.fa.fa-edit.text-navy
+            | &nbsp;&nbsp;
+            a.delete(href='/robot/faq/delete/#{faq.id}')
+                i.fa.fa-trash-o.text-navy
+
+block links
+    link(href='/assets/components/footable/css/footable.core.css?2.0.3', rel='stylesheet')
+    style.
+        .footable-row-detail-name {
+            min-width: 80px;
+        }
+
+block content
+    // https://leancloud.cn/
+    .row
+        .col-lg-12
+            .ibox.float-e-margins
+                .ibox-title
+                    h5 Robot FAQ
+                    .ibox-tools
+                        a.collapse-link
+                            i.fa.fa-chevron-up
+                .ibox-content
+                    table.footable.table.table-stripped.toggle-arrow-tiny(data-page-size='10')
+                        thead
+                            tr
+                                th(data-toggle='true') 问题
+                                th 关键字
+                                th(data-hide='all') 答案
+                                th(data-hide='all') 提问人
+                                th(data-hide='all') 回答人
+                                th(data-hide='all') 记录人
+                                th(data-hide='all', data-type='date') 记录时间
+                                th(data-hide='all', data-type='date') 修改时间
+                                th(data-sort-ignore='true', style='min-width: 80px;') #
+                        tbody
+                            - each faq in model
+                                +row(faq)
+                        tfoot
+                            tr
+                                td(colspan='9')
+                                    ul.pagination.pull-right
+
+    #modal.modal.fade(tabindex='-1', role='dialog', data-backdrop='static')
+        .modal-dialog.modal-lg
+            .modal-content
+
+block actions
+    .btn-group
+        a.btn.btn-primary(href='/robot/faq/add', data-toggle='modal', data-target='#modal' ) 添加FAQ
+        button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            span.caret
+            span.sr-only Toggle Dropdown
+        ul.dropdown-menu.dropdown-menu-right
+            li
+                a(href='#') 导入
+            li.divider(role='separator')
+            li
+                a(href='#') 导出
+
+block scripts
+    script(src='/assets/components/footable/js/footable.all.min.js?2.0.3')
+    script(src='/js/robot-faq.js#1.0.0')

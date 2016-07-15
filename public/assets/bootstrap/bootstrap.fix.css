@@ -1,0 +1,10 @@
+/* input button addon 遮挡了输入框右侧边框 */
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group{
+    margin-left: 0;
+}
+
+
+.max-img-responsive {
+    max-width: 100%;
+}

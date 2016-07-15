@@ -1,0 +1,48 @@
+extends ../layout_h5
+
+block links
+    link(href='/assets/iCheck/icheck-custom.css#1.0.0', rel='stylesheet')
+    link(href='/css/inspinia.css#1.0.0', rel='stylesheet')
+block content
+    .gray-bg.full-height
+        .middle-box.text-center.loginscreen.animated.fadeInDown
+            div
+                div
+                    h1.logo-name IN+
+                h3 Register to IN+
+                p Create account to see it in action.
+                form.m-t(role='form', action='/register', method='POST')
+                    .form-group
+                        .input-group
+                            input#email.form-control(type='text', name='email', placeholder='Email', required='')
+                            span.input-group-addon @mysoft.com.cn
+                    .form-group
+                        input#password.form-control(type='password', name='password', placeholder='Password',
+                            required='', minlength=6, maxlength=16)
+                    .form-group
+                        input.form-control(type='password', name='_password_confirm', placeholder='Confirm Password',
+                            required='', minlength=6, maxlength=16)
+                    .form-group
+                        .input-group
+                            input#vccode.form-control(type='text', name='vccode', placeholder='Verification Code', required='', maxlength=4)
+                            span.input-group-btn
+                                button#sendvc.btn.btn-default(type='button', disabled='') 发送验证码
+                    .form-group
+                        .checkbox.i-checks
+                            label
+                                input(type='checkbox')
+                                i
+                                |  Agree the terms and policy
+                    button.btn.btn-primary.block.full-width.m-b(type='submit') Register
+                    p.text-muted.text-center
+                        small Already have an account?
+                    a.btn.btn-sm.btn-white.btn-block(href='/login') Login
+                p.m-t
+                    small Inspinia we app framework base on Bootstrap 3 © 2016
+
+block scripts
+    script(src='/assets/components/jquery-validation/jquery.validate.min.js?1.15.0')
+    script(src='/assets/components/jquery-validation/messages_zh.js?1.15.0')
+    script(src='/assets/components/iCheck/icheck.min.js?1.0.2')
+    script(src='/js/plantform.js#1.0.0')
+    script(src='/js/register.js#1.0.0')

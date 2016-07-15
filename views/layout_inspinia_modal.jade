@@ -1,0 +1,15 @@
+block links
+
+.modal-header
+    button.close(type='button', data-dismiss='modal', aria-label='Close')
+        span(aria-hidden='true') ×
+    h4.modal-title #{title}
+.modal-body
+    block content
+        p One fine body…
+.modal-footer
+    block actions
+        button.btn.btn-default(type='button', data-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes
+
+block scripts

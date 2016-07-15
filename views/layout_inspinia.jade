@@ -1,0 +1,150 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title INSPINIA | #{title}
+        link(href='/assets/components/bootstrap/css/bootstrap.min.css?3.3.6', rel='stylesheet')
+        link(href='/assets/components/font-awesome/css/font-awesome.min.css?4.6.3', rel='stylesheet')
+        link(href='/assets/components/animate.css/animate.min.css?3.5.2', rel='stylesheet')
+        block links
+        link(href='/css/inspinia.css#1.0.0', rel='stylesheet')
+    body
+        #wrapper
+            include _nav
+            #page-wrapper.gray-bg
+                .row.border-bottom
+                    nav.navbar.navbar-static-top(role='navigation', style='margin-bottom: 0')
+                        .navbar-header
+                            a.navbar-minimalize.minimalize-styl-2.btn.btn-primary(href='#')
+                                i.fa.fa-bars
+                            form.navbar-form-custom(role='search', action='http://webapplayers.com/inspinia_admin-v2.5/search_results.html')
+                                .form-group
+                                    input#top-search.form-control(type='text', placeholder='Search for something...', name='top-search')
+                        ul.nav.navbar-top-links.navbar-right
+                            li
+                                span.m-r-sm.text-muted.welcome-message Welcome to INSPINIA+ Admin Theme.
+                            li.dropdown
+                                a.dropdown-toggle.count-info(data-toggle='dropdown', href='#')
+                                    i.fa.fa-envelope
+                                    span.label.label-warning 16
+                                ul.dropdown-menu.dropdown-messages
+                                    li
+                                        .dropdown-messages-box
+                                            a.pull-left(href='profile.html')
+                                                img.img-circle(alt='image', src='img/a7.jpg')
+                                            .media-body
+                                                small.pull-right 46h ago
+                                                strong Mike Loreipsum
+                                                |  started following
+                                                strong Monica Smith
+                                                | .
+                                                br
+                                                small.text-muted 3 days ago at 7:58 pm - 10.06.2014
+                                    li.divider
+                                    li
+                                        .dropdown-messages-box
+                                            a.pull-left(href='profile.html')
+                                                img.img-circle(alt='image', src='img/a4.jpg')
+                                            .media-body
+                                                small.pull-right.text-navy 5h ago
+                                                strong Chris Johnatan Overtunk
+                                                |  started following
+                                                strong Monica Smith
+                                                | .
+                                                br
+                                                small.text-muted Yesterday 1:21 pm - 11.06.2014
+                                    li.divider
+                                    li
+                                        .dropdown-messages-box
+                                            a.pull-left(href='profile.html')
+                                                img.img-circle(alt='image', src='img/profile.jpg')
+                                            .media-body
+                                                small.pull-right 23h ago
+                                                strong Monica Smith
+                                                |  love
+                                                strong Kim Smith
+                                                | .
+                                                br
+                                                small.text-muted 2 days ago at 2:30 am - 11.06.2014
+                                    li.divider
+                                    li
+                                        .text-center.link-block
+                                            a(href='mailbox.html')
+                                                i.fa.fa-envelope
+                                                strong Read All Messages
+                            li.dropdown
+                                a.dropdown-toggle.count-info(data-toggle='dropdown', href='#')
+                                    i.fa.fa-bell
+                                    span.label.label-primary 8
+                                ul.dropdown-menu.dropdown-alerts
+                                    li
+                                        a(href='mailbox.html')
+                                            div
+                                                i.fa.fa-envelope.fa-fw
+                                                |  You have 16 messages
+                                                span.pull-right.text-muted.small 4 minutes ago
+                                    li.divider
+                                    li
+                                        a(href='profile.html')
+                                            div
+                                                i.fa.fa-twitter.fa-fw
+                                                |  3 New Followers
+                                                span.pull-right.text-muted.small 12 minutes ago
+                                    li.divider
+                                    li
+                                        a(href='grid_options.html')
+                                            div
+                                                i.fa.fa-upload.fa-fw
+                                                |  Server Rebooted
+                                                span.pull-right.text-muted.small 4 minutes ago
+                                    li.divider
+                                    li
+                                        .text-center.link-block
+                                            a(href='notifications.html')
+                                                strong See All Alerts
+                                                i.fa.fa-angle-right
+                            li
+                                a(href='login.html')
+                                    i.fa.fa-sign-out
+                                    |  Log out
+                .row.wrapper.border-bottom.white-bg.page-heading
+                    .col-sm-4
+                        h2 This is main title
+                        ol.breadcrumb
+                            li
+                                a(href='index-2.html') This is
+                            li.active
+                                strong Breadcrumb
+                    .col-sm-8
+                        .title-action
+                            block actions
+                                a.btn.btn-primary(href='#') This is action area
+                .wrapper.wrapper-content
+                    block content
+                        .middle-box.text-center.animated.fadeInRightBig
+                            h3.font-bold This is page content
+                            .error-desc
+                                | You can create here any grid layout you want. And any variation layout you imagine:) Check out
+                                | main dashboard and other site. It use many different layout.
+                                br
+                                a.btn.btn-primary.m-t(href='index-2.html') Dashboard
+                .footer
+                    .pull-right
+                        | 10GB of
+                        strong 250GB
+                        |  Free.
+                    div
+                        strong Copyright
+                        |  Example Company © 2014-2015
+        // Mainly scripts
+        script(src='/assets/components/jquery/jquery.min.js?2.2.4')
+        script(src='/assets/components/bootstrap/js/bootstrap.min.js?3.3.6')
+        script(src='/assets/components/metisMenu/metisMenu.min.js?2.5.2')
+        script(src='/assets/components/jquery-slimscroll/jquery.slimscroll.min.js?1.3.8')
+        block scripts
+        // Custom and plugin javascript
+        script(src='/js/inspinia.js#1.0.0')
+        script(src='/js/plantform.js#1.0.0')
+        script(src='/assets/components/PACE/pace.min.js?1.0.2')
+    //Thanks: http://html2jade.org/

@@ -1,0 +1,42 @@
+.floating-label-form-group:not(:first-child) {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.bootstrap-tagsinput {
+    display: block;
+    padding: 0;
+
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+    position: relative;
+    z-index: 1;
+    resize: none;
+}
+
+.bootstrap-tagsinput input {
+    padding: 6px 0;
+    top: 1px;
+}
+
+.floating-label-form-group-with-value .bootstrap-tagsinput ::-webkit-input-placeholder {
+    color: transparent;
+}
+.floating-label-form-group-with-value .bootstrap-tagsinput ::-moz-placeholder,
+.floating-label-form-group-with-value .bootstrap-tagsinput :-ms-input-placeholder,
+.floating-label-form-group-with-value .bootstrap-tagsinput input:-moz-placeholder {
+    color: transparent;
+}
+
+.note-editor.note-frame {
+    margin: 20px 0 0 0;
+    border: none;
+}
+
+.note-editor.note-frame,
+.note-editor.note-frame .panel-heading,
+.note-editor.note-frame .note-statusbar {
+    border-radius: 0;
+}

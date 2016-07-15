@@ -1,0 +1,56 @@
+nav.navbar-default.navbar-static-side(role='navigation')
+    .sidebar-collapse
+        ul#side-menu.nav.metismenu
+            li.nav-header
+                .dropdown.profile-element
+                    span
+                        img.img-circle(alt='image', src='img/profile_small.jpg')
+                    a.dropdown-toggle(data-toggle='dropdown', href='#')
+                        span.clear
+                            span.block.m-t-xs
+                                strong.font-bold David Williams
+                            span.text-muted.text-xs.block
+                                | Art Director
+                                b.caret
+                    ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                        li
+                            a(href='profile.html') Profile
+                        li
+                            a(href='contacts.html') Contacts
+                        li
+                            a(href='mailbox.html') Mailbox
+                        li.divider
+                        li
+                            a(href='login.html') Logout
+                .logo-element
+                    | IN+
+            li
+                a(href='/qqrobot')
+                    i.fa.fa-qq
+                    span.nav-label QQ Robot
+                    span.fa.arrow
+                ul.nav.nav-second-level.collapse
+                    li
+                        a(href='/qqrobot/plug-into')
+                            | 接入
+                            span.label.label-danger.pull-right dev*
+            li
+                a(href='/wxrobot')
+                    i.fa.fa-weixin
+                    span.nav-label WeChat Robot
+                    span.fa.arrow
+                ul.nav.nav-second-level.collapse
+                    li
+                        a(href='/wxrobot/plug-into')
+                            | 接入
+                            span.label.label-danger.pull-right dev*
+            li.active
+                a(href='/robot')
+                    i.fa.fa-cogs
+                    span.nav-label Robot 管理
+                    span.fa.arrow
+                ul.nav.nav-second-level.collapse.in
+                    li.active
+                        a(href='/robot/faq')
+                            | FAQ
+                            span.label.label-primary.pull-right NEW

@@ -1,0 +1,36 @@
+extends ../layout_h5
+
+block links
+    link(href='/css/inspinia.css#1.0.0', rel='stylesheet')
+
+block content
+    .gray-bg.full-height
+        .middle-box.text-center.loginscreen.animated.fadeInDown
+            div
+                div
+                    h1.logo-name IN+
+                h3 Welcome to IN+
+                p
+                    | Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                p Login in. To see it in action.
+                form.m-t(role='form', action='/login', method='POST')
+                    .form-group
+                        .input-group
+                            input.form-control(type='text', name='email', placeholder='Email', required='')
+                            span.input-group-addon @mysoft.com.cn
+                    .form-group
+                        input.form-control(type='password', name='password', placeholder='Password', required='')
+                    button.btn.btn-primary.block.full-width.m-b(type='submit') Login
+                    a(href='#')
+                        small Forgot password?
+                    p.text-muted.text-center
+                        small Do not have an account?
+                    a.btn.btn-sm.btn-white.btn-block(href='/register') Create an account
+                p.m-t
+                    small Inspinia we app framework base on Bootstrap 3 © 2016
+
+block scripts
+    script(src='/assets/components/iCheck/icheck.min.js?1.0.2')
+    script(src='/js/plantform.js#1.0.0')
+    script(src='/js/login.js#1.0.0')
+

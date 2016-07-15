@@ -1,0 +1,29 @@
+extends ../layout_inspinia_modal
+
+block links
+    link(href='/assets/components/bootstrap-floating-labels/floating-labels.css?master', rel='stylesheet')
+    link(href='/assets/components/summernote/summernote.css?0.8.1', rel='stylesheet')
+    link(href='/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.css?0.8.0', rel='stylesheet')
+    link(href='/css/robot-faq-edit.css#1.0.0', rel='stylesheet')
+
+block actions
+    button.btn.btn-default(type='button', data-dismiss='modal') Close
+    button#submit.btn.btn-primary(type='button') Save changes
+
+block content
+    form#editor
+        input(type='hidden', name='id', value='#{model.id}')
+        .form-group.floating-label-form-group
+            label(for='question') Question
+            input#question.form-control(placeholder='Question', name='question', value='#{model.question}')
+        .form-group.floating-label-form-group
+            label(for='keyword') Keyword
+            input#keyword.form-control(placeholder='Keyword', data-role='tagsinput', value='#{model.keyword}')
+        #answer.summernote !{model.answer}
+
+block scripts
+    script(src='/assets/components/bootstrap-floating-labels/floating-labels.js?master')
+    script(src='/assets/components/summernote/summernote.min.js?0.8.1')
+    script(src='/assets/components/summernote/lang/summernote-zh-CN.js?0.8.1')
+    script(src='/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.min.js?0.8.0')
+    script(src='/js/robot-faq-edit.js#1.0.0')

@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(href='/assets/components/bootstrap/css/bootstrap.min.css?3.3.6', rel='stylesheet')
+        link(href='/assets/components/font-awesome/css/font-awesome.min.css?4.6.3', rel='stylesheet')
+        link(href='/assets/components/animate.css/animate.min.css?3.5.2', rel='stylesheet')
+        block links
+    body
+        block content
+        script(src='/assets/components/jquery/jquery.min.js?2.2.4')
+        script(src='/assets/components/bootstrap/js/bootstrap.min.js?3.3.6')
+        block scripts
+    //Thanks: http://html2jade.org/
